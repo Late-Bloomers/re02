@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex布局</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        /* background: linear-gradient(90deg, #d8e3e7, #126e82); */
+        background-color: #eee;
+      }
+      /* * {
+        border: 1px solid black;
+      } */
+      .flex {
+        display: flex;
+      }
+      .baiSe {
+        background-color: white;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+          rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgl8 {
+        margin-left: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      img {
+        position: relative;
+        left: 50%;
+        top: 60px;
+        transform: translate(-50%, -50%);
+      }
+      .daohang {
+        padding: 10px 20px;
+        border-bottom: 1px solid gray;
+        font-size: 12px;
+        color: #666;
+      }
+      /* 当屏幕宽度小于600px时需要的样式 */
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        .youQu {
+          margin-left: 8px;
+        }
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!--侧边栏-->
+    <div
+      style="
+        width: 200px;
+        z-index: 1;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #999;
+      "
+      class="baiSe ceBian"
+    >
+      <!-- 头像栏 -->
+      <div class="flex">
+        <img src="./logo2.png" width="100px" alt="图片无法查看" />
+      </div>
+      <div style="margin-left: 25%; margin-top: 12px">智能排班系统</div>
+      <!-- 导航栏 -->
+      <div class="daohang">首页</div>
+      <div class="daohang">门店管理</div>
+      <div class="daohang">排班管理</div>
+      <div class="daohang">个性化规则</div>
+      <div class="daohang">班表日历</div>
+      <div class="daohang">特殊日期</div>
+      <div class="daohang">班次</div>
+      <div class="daohang">角色、技能管理</div>
+      <div class="daohang">数据监控</div>
+    </div>
+    <!--主区域-->
+    <div class="flex1 flex column">
+      <!--头部栏-->
+      <div style="height: 60px; z-index: 1" class="baiSe"></div>
+      <!--内容区-->
+      <div style="overflow: auto" class="flex1 flex neiRong">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex shuJuQu">
+            <!-- 数据块 -->
+            <div style="height: 100px" class="flex1 shuJu baiSe mgr8"></div>
+            <div style="height: 100px" class="flex1 shuJu baiSe mgr8"></div>
+            <div style="height: 100px" class="flex1 shuJu baiSe mgr8"></div>
+            <div style="height: 100px" class="flex1 shuJu baiSe"></div>
+          </div>
+          <!-- 列表区 -->
+          <div class="column flex"></div>
+          <!-- 列表项 -->
+          <div style="height: 160px" class="baiSe mgt8"></div>
+          <div style="height: 160px" class="baiSe mgt8"></div>
+          <div style="height: 160px" class="baiSe mgt8"></div>
+          <div style="height: 160px" class="baiSe mgt8"></div>
+          <div style="height: 160px" class="baiSe mgt8"></div>
+          <div style="height: 160px" class="baiSe mgt8"></div>
+          <div style="height: 160px" class="baiSe mgt8"></div>
+          <div style="height: 160px" class="baiSe mgt8"></div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column mg8 mgr8 youQu">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baiSe"></div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="baiSe"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
